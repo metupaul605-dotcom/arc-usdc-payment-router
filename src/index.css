@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Arc Dark tokens ──────────────────────────────────────────────── */
+:root {
+  --bg: #0b0f19;
+  --bg-gradient: linear-gradient(160deg, #0b0f19 0%, #0d1120 60%, #0e1325 100%);
+  --surface: rgba(30, 41, 59, 0.55);
+  --surface-strong: rgba(30, 41, 59, 0.70);
+  --surface-muted: rgba(15, 23, 42, 0.80);
+  --ink: #f1f5f9;
+  --ink-2: #cbd5e1;
+  --muted: #94a3b8;
+  --subtle: #64748b;
+  --border: rgba(148, 163, 184, 0.12);
+  --border-strong: rgba(148, 163, 184, 0.30);
+  --accent: #4f46e5;
+  --accent-hover: #6366f1;
+  --focus: #818cf8;
+  --success: #22c55e;
+  --danger: #f43f5e;
+  /* indigo glow used on primary CTA */
+  --accent-shadow: rgba(79, 70, 229, 0.35);
+}
+
+/* ── Base ─────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100dvh;
+  background: var(--bg-gradient);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle dot-grid overlay on the page background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(148,163,184,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Input / textarea base ────────────────────────────────────────── */
+input, textarea {
+  caret-color: var(--accent-hover);
+}
+input::placeholder, textarea::placeholder {
+  color: var(--subtle);
+  opacity: 1;
+}
+
+/* ── ConnectKit dark override ─────────────────────────────────────── */
+:root {
+  --ck-font-family: 'DM Sans', sans-serif;
+  --ck-border-radius: 16px;
+  --ck-body-background: #0d1120;
+  --ck-body-color: #f1f5f9;
+  --ck-body-color-muted: #94a3b8;
+  --ck-body-background-secondary: #1e293b;
+  --ck-body-background-tertiary: #0f172a;
+  --ck-primary-button-background: #4f46e5;
+  --ck-primary-button-hover-background: #6366f1;
+  --ck-primary-button-color: #ffffff;
+  --ck-secondary-button-background: #1e293b;
+  --ck-secondary-button-color: #cbd5e1;
+  --ck-overlay-background: rgba(0, 0, 0, 0.72);
+  --ck-modal-box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+
+/* ── Typography helpers ──────────────────────────────────────────── */
+.display {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', Menlo, monospace;
+}
